@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  Photravel
-//
-//  Created by 岡田暁 on 2017-10-20.
-//  Copyright © 2017 Aki. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
