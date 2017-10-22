@@ -12,7 +12,7 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         
         let testXib = UINib(nibName:"PhotoGalleryCollectionViewCell", bundle:nil)
         collectionView.register(testXib, forCellWithReuseIdentifier:"Cell")
-
+        Flickr.getImage()
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

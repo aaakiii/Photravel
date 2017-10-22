@@ -16,6 +16,11 @@
 		6197B5C01F9A7C7100BEC89D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6197B5BE1F9A7C7100BEC89D /* Main.storyboard */; };
 		6197B5C21F9A7C7100BEC89D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6197B5C11F9A7C7100BEC89D /* Assets.xcassets */; };
 		6197B5C51F9A7C7100BEC89D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6197B5C31F9A7C7100BEC89D /* LaunchScreen.storyboard */; };
+		61FDC6781F9C06F500911BD4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61FDC6771F9C06F500911BD4 /* Alamofire.framework */; };
+		61FDC67A1F9C070200911BD4 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61FDC6791F9C070200911BD4 /* SwiftyJSON.framework */; };
+		61FDC67D1F9C07EF00911BD4 /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FDC67C1F9C07EF00911BD4 /* Flickr.swift */; };
+		61FDC67F1F9C0C8F00911BD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FDC67E1F9C0C8F00911BD4 /* Constants.swift */; };
+		61FDC6811F9C0CE400911BD4 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FDC6801F9C0CE400911BD4 /* ApiKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		6197B5C11F9A7C7100BEC89D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6197B5C41F9A7C7100BEC89D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6197B5C61F9A7C7100BEC89D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61FDC6771F9C06F500911BD4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		61FDC6791F9C070200911BD4 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		61FDC67C1F9C07EF00911BD4 /* Flickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flickr.swift; sourceTree = "<group>"; };
+		61FDC67E1F9C0C8F00911BD4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		61FDC6801F9C0CE400911BD4 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61FDC67A1F9C070200911BD4 /* SwiftyJSON.framework in Frameworks */,
+				61FDC6781F9C06F500911BD4 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				616E241D1F9BF5FF0097AD24 /* Photo.swift */,
+				61FDC67C1F9C07EF00911BD4 /* Flickr.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -89,6 +102,7 @@
 			children = (
 				6197B5B91F9A7C7100BEC89D /* Photravel */,
 				6197B5B81F9A7C7100BEC89D /* Products */,
+				61FDC6761F9C06F500911BD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,8 +126,19 @@
 				6197B5C11F9A7C7100BEC89D /* Assets.xcassets */,
 				6197B5C31F9A7C7100BEC89D /* LaunchScreen.storyboard */,
 				6197B5C61F9A7C7100BEC89D /* Info.plist */,
+				61FDC6801F9C0CE400911BD4 /* ApiKeys.swift */,
+				61FDC67E1F9C0C8F00911BD4 /* Constants.swift */,
 			);
 			path = Photravel;
+			sourceTree = "<group>";
+		};
+		61FDC6761F9C06F500911BD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61FDC6791F9C070200911BD4 /* SwiftyJSON.framework */,
+				61FDC6771F9C06F500911BD4 /* Alamofire.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +151,7 @@
 				6197B5B31F9A7C7100BEC89D /* Sources */,
 				6197B5B41F9A7C7100BEC89D /* Frameworks */,
 				6197B5B51F9A7C7100BEC89D /* Resources */,
+				61FDC67B1F9C071F00911BD4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -184,6 +210,24 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		61FDC67B1F9C071F00911BD4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6197B5B31F9A7C7100BEC89D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -193,6 +237,9 @@
 				616E241F1F9BF5FF0097AD24 /* PhotoGalleryCollectionViewCell.swift in Sources */,
 				616E241E1F9BF5FF0097AD24 /* PhotoGalleryViewController.swift in Sources */,
 				6197B5BB1F9A7C7100BEC89D /* AppDelegate.swift in Sources */,
+				61FDC67F1F9C0C8F00911BD4 /* Constants.swift in Sources */,
+				61FDC67D1F9C07EF00911BD4 /* Flickr.swift in Sources */,
+				61FDC6811F9C0CE400911BD4 /* ApiKeys.swift in Sources */,
 				616E24211F9BF5FF0097AD24 /* Photo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +378,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Photravel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aki.Photravel;
@@ -345,6 +396,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Photravel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aki.Photravel;
