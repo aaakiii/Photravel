@@ -5,7 +5,10 @@ import SwiftyJSON
 
 class Flickr{
     
-    static func getImage(){
+    
+    static var photos = [Photo]()
+    
+    static func getImage(completion: @escaping(_ photos: [Photo]) -> Void){
         
         let baseUrl = "https://api.flickr.com/services/rest/"
         let apiKey = Constants.flickrApiKey
@@ -19,7 +22,16 @@ class Flickr{
     
         // Call JSON Data
         Alamofire.request(baseUrl, parameters: query).responseJSON{ response in
-            print(response.result.value!)
+            guard let object = response.result.value else {
+                return
+            }
+            let body = JSON(object)
+            for(_, photos): (String, JSON) in body["photos"]["photo"]{
+                // Add each data to Photo array
+                print(photos["url_s"].stringValue)
+                Flickr.photos.append(Photo(id: photos["id"].stringValue, imageByUrl: photos["url_s"].stringValue, takenDate: photos["date_taken"].stringValue))
+            }
+            completion(Flickr.photos)
         }
     }
 }
