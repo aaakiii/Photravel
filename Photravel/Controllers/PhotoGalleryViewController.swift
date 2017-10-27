@@ -42,7 +42,6 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         Flickr.getImage{ (photos) in
             var imageData = [Photo]()
             imageData = Flickr.photos
-            print(imageData.count)
             self.photos = imageData
             self.collectionView.reloadData()
         }
