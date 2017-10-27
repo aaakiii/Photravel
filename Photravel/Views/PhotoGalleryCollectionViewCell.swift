@@ -1,8 +1,8 @@
 import UIKit
 
 class PhotoGalleryCollectionViewCell: UICollectionViewCell {
-
     var photo: Photo?
+
     @IBOutlet weak var imageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -13,14 +13,18 @@ class PhotoGalleryCollectionViewCell: UICollectionViewCell {
         self.photo = photo
 
         // Photo image view
-        let screenWidth = UIScreen.main.bounds.size.width
-        imageView.frame.origin.x = 10
-        imageView.frame.origin.y = 10
+        imageView.frame.origin.x = 0
+        imageView.frame.origin.y = 0
         let url = URL(string: photo.imageByUrl)
         let data = try? Data(contentsOf: url!)
-        imageView.image = Helpers.cropImage(image: UIImage(data: data!)!, w: Int(screenWidth - 40), h: Int(screenWidth - 40))
+        imageView.image = UIImage(data: data!)
         imageView.sizeToFit()
-        
+
+    }
+
+    // when the cell is getting reused.
+    override func prepareForReuse() {
+        self.imageView.image = nil
     }
 
 }
