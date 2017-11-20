@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>589169492747-tb0psdu7aq6dcla65vapaprj5h2gq2cv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.589169492747-tb0psdu7aq6dcla65vapaprj5h2gq2cv</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCEu8EmXzI_8Wdna7fdJzg9A5MALbK_sbk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>589169492747</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>aki.Photravel</string>
+	<key>PROJECT_ID</key>
+	<string>photravel-80f41</string>
+	<key>STORAGE_BUCKET</key>
+	<string>photravel-80f41.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:589169492747:ios:b5bfb69bcbd26cb3</string>
+	<key>DATABASE_URL</key>
+	<string>https://photravel-80f41.firebaseio.com</string>
+</dict>
+</plist>
