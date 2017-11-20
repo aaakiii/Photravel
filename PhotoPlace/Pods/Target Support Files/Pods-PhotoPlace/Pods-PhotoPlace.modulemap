@@ -1,6 +1,0 @@
-framework module Pods_PhotoPlace {
-  umbrella header "Pods-PhotoPlace-umbrella.h"
-
-  export *
-  module * { export * }
-}
