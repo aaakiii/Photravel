@@ -144,10 +144,10 @@
             </objects>
             <point key="canvasLocation" x="1093.5999999999999" y="32.833583208395808"/>
         </scene>
-        <!--View Controller-->
+        <!--User View Controller-->
         <scene sceneID="d4j-iX-j64">
             <objects>
-                <viewController id="r4b-VU-o1V" sceneMemberID="viewController">
+                <viewController id="r4b-VU-o1V" customClass="UserViewController" customModule="Photravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="or4-kM-t4w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,6 +194,11 @@
                         <viewLayoutGuide key="safeArea" id="u5i-Yt-n23"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <connections>
+                        <outlet property="completeButton" destination="9Sp-ju-fPE" id="mzt-33-EIa"/>
+                        <outlet property="userImagePickr" destination="zuX-zW-pll" id="HfN-Nk-p1B"/>
+                        <outlet property="usernameField" destination="iN4-Tw-Ngo" id="3Ig-G7-u0H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Db-E9-EqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
