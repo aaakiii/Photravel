@@ -23,6 +23,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             {(snapshot) in
                 if let snapshot = snapshot.children.allobjects as? [DataSnapshot] {
                     for data in snapshot {
+                        print(data)
                         if let postDictionary = data.value as? Dictionary<String, AnyObject> {
                             let key = data.key
                             let post = Post(postKey: key, postData: postDictionary)
@@ -44,6 +45,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         return posts.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return PostTableViewCell[]
+        let post = posts[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? PostTableViewCell {
+            cell.configCell(post: post)
+            return cell
+        } else {
+            return PostTableViewCell[]
+        }
+        
     }
 }
