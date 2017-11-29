@@ -10,7 +10,7 @@
 		1E79EED370E929214840184F /* Pods_Photravel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4385590171C53C3ACE708 /* Pods_Photravel.framework */; };
 		6139940C1FCBE13800073410 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6139940B1FCBE13800073410 /* CircleImage.swift */; };
 		6139940E1FCBE39600073410 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6139940D1FCBE39600073410 /* FeedViewController.swift */; };
-		613994101FCD1AAD00073410 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6139940F1FCD1AAD00073410 /* Posts.swift */; };
+		613994101FCD1AAD00073410 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6139940F1FCD1AAD00073410 /* Post.swift */; };
 		613994121FCD26F100073410 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613994111FCD26F100073410 /* PostTableViewCell.swift */; };
 		6143F43E1FC252FC00D272DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6143F43D1FC252FC00D272DC /* AppDelegate.swift */; };
 		6143F4401FC252FC00D272DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6143F43F1FC252FC00D272DC /* ViewController.swift */; };
@@ -24,7 +24,7 @@
 /* Begin PBXFileReference section */
 		6139940B1FCBE13800073410 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		6139940D1FCBE39600073410 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		6139940F1FCD1AAD00073410 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		6139940F1FCD1AAD00073410 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		613994111FCD26F100073410 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		6143F43A1FC252FC00D272DC /* Photravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6143F43D1FC252FC00D272DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				6139940B1FCBE13800073410 /* CircleImage.swift */,
+				6139940F1FCD1AAD00073410 /* Post.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -100,7 +101,6 @@
 				6143F44F1FC254B000D272DC /* GoogleService-Info.plist */,
 				61E978381FC7D9E5009478AA /* UserViewController.swift */,
 				6139940D1FCBE39600073410 /* FeedViewController.swift */,
-				6139940F1FCD1AAD00073410 /* Posts.swift */,
 				613994111FCD26F100073410 /* PostTableViewCell.swift */,
 			);
 			path = Photravel;
@@ -254,7 +254,7 @@
 			files = (
 				613994121FCD26F100073410 /* PostTableViewCell.swift in Sources */,
 				6143F4401FC252FC00D272DC /* ViewController.swift in Sources */,
-				613994101FCD1AAD00073410 /* Posts.swift in Sources */,
+				613994101FCD1AAD00073410 /* Post.swift in Sources */,
 				6139940C1FCBE13800073410 /* CircleImage.swift in Sources */,
 				6139940E1FCBE39600073410 /* FeedViewController.swift in Sources */,
 				61E978391FC7D9E5009478AA /* UserViewController.swift in Sources */,

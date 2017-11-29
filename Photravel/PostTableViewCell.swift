@@ -11,7 +11,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     
     var post: Post!
-    var userPostKey: FIRDatabaseReference!
+    var userPostKey: DatabaseReference!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,7 +30,7 @@ class PostTableViewCell: UITableViewCell {
         if userImg != nil{
             self.postImg.image = img
         } else {
-            let ref = FIRStorage.storage().reference(forUrl: post.userImg)
+            let ref = Storage.storage().reference(forUrl: post.userImg)
             ref.data(withMaxSize: 2 * 1024, completion: {(data, error) in
                 if error != nil{
                     print("couldn't load img")

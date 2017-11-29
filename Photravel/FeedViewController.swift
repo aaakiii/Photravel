@@ -1,27 +1,49 @@
 import UIKit
+import Firebase
+import FirebaseDatabase
 
-class FeedViewController: UIViewController {
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var postButton: UIButton!
+    
+    var posts = [Post]()
+    var post: Post!
+    var imgPicker: UIImagePickerController!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        imgPicker = UIImagePickerController()
+        imgPicker.delegate = self
+        
+        Database.database().reference().child("posts").observe(.value, with:
+            {(snapshot) in
+                if let snapshot = snapshot.children.allobjects as? [DataSnapshot] {
+                    for data in snapshot {
+                        if let postDictionary = data.value as? Dictionary<String, AnyObject> {
+                            let key = data.key
+                            let post = Post(postKey: key, postData: postDictionary)
+                            self.posts.append(post)
+                        }
+                    }
+                    
+                }
+                self.tableView.reloadData()
+        })
 
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
     }
-    */
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return PostTableViewCell[]
+    }
 }

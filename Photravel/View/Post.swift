@@ -1,5 +1,6 @@
 import Foundation
 import Firebase
+import FirebaseDatabase
 
 class Post {
     private var username: String!
@@ -7,7 +8,7 @@ class Post {
     private var postImg: String!
     private var likes: Int!
     private var postKey: String!
-    private var postRef: FIRDatabaseReference
+    private var postRef: DatabaseReference!
     
     var username: String {
         return username
@@ -52,7 +53,7 @@ class Post {
         if let likes = postData["likes"] as? Int {
             likes = likes
         }
-        postRef = FIRDatabase.database().reference().child["posts"]
+        postRef = Database.database().reference().child["posts"]
         
     }
     
