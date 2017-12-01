@@ -26,7 +26,7 @@ class UserViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func keychain(){
-        keychainWrapper.standard.set(userUid, forKey: "uid")
+        KeychainWrapper.standard.set(userUid, forKey: "uid")
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

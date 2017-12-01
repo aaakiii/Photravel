@@ -1,6 +1,7 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import FirebaseDatabase
 
 class PostTableViewCell: UITableViewCell {
 
@@ -11,7 +12,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     
     var post: Post!
-    var userPostKey: DatabaseReference!
+    var userPostKey:DatabaseReference!
     
     override func awakeFromNib() {
         super.awakeFromNib()

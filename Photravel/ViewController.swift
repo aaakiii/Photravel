@@ -1,6 +1,8 @@
 import UIKit
 import Firebase
 import SwiftKeychainWrapper
+import FirebaseAuth
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!

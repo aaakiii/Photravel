@@ -3,57 +3,57 @@ import Firebase
 import FirebaseDatabase
 
 class Post {
-    private var username: String!
-    private var userImg:String!
-    private var postImg: String!
-    private var likes: Int!
-    private var postKey: String!
+    private var _username: String!
+    private var _userImg:String!
+    private var _postImg: String!
+    private var _likes: Int!
+    private var _postKey: String!
     private var postRef: DatabaseReference!
     
     var username: String {
-        return username
+        return _username
     }
     
     var userImg: String {
-        return userImg
+        return _userImg
     }
     var postImg: String {
         get{
-            return postImg
+            return _postImg
         } set {
-            postImg = newValue
+            _postImg = newValue
         }
     }
     var likes: Int {
-        return likes
+        return _likes
     }
     
     var postKey: String {
-            return postKey
+            return _postKey
     }
     init(imgUrl: String, likes: Int, username: String, userImg: String) {
-        likes = likes
-        postImg = imgUrl
-        userImg = userImg
-        username = username
+        _likes = likes
+        _postImg = imgUrl
+        _userImg = userImg
+        _username = username
         
     }
     
     init(postKey: String, postData:Dictionary<String, AnyObject>) {
-        postKey = postKey
+        _postKey = postKey
         if let username = postData["username"] as? String {
-            username = username
+            _username = username
         }
         if let userImg = postData["userImg"] as? String {
-            userImg = userImg
+            _userImg = userImg
         }
         if let postImg = postData["imgUrl"] as? String {
-            postImg = postImg
+            _postImg = postImg
         }
         if let likes = postData["likes"] as? Int {
-            likes = likes
+            _likes = likes
         }
-        postRef = Database.database().reference().child["posts"]
+        postRef = Database.database().reference().child("posts")
         
     }
     
