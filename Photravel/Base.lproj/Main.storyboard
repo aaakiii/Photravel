@@ -126,8 +126,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="264.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSn-8h-n4M">
-                                                    <rect key="frame" x="55" y="5" width="265" height="254"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSn-8h-n4M" customClass="PostView" customModule="Photravel" customModuleProvider="target">
+                                                    <rect key="frame" x="55" y="5" width="265" height="265"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6wp-aF-le2">
                                                             <rect key="frame" x="0.0" y="-9" width="265" height="227"/>
@@ -155,9 +155,10 @@
                                                             <rect key="frame" x="174" y="227" width="46" height="30"/>
                                                             <state key="normal" title="Like"/>
                                                         </button>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SNs-4f-a99" customClass="CircleImage" customModule="Photravel" customModuleProvider="target">
-                                                            <rect key="frame" x="4" y="222" width="30" height="30"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SNs-4f-a99" customClass="CircleImage" customModule="Photravel" customModuleProvider="target">
+                                                            <rect key="frame" x="4" y="231" width="30" height="30"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="0oE-DL-c8M"/>
                                                                 <constraint firstAttribute="width" constant="30" id="YUU-4I-GgR"/>
                                                             </constraints>
                                                         </imageView>
@@ -171,7 +172,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="Poi-24-WFF" secondAttribute="trailing" id="Nwc-4o-ROW"/>
                                                         <constraint firstItem="ipH-BV-5KK" firstAttribute="centerY" secondItem="Poi-24-WFF" secondAttribute="centerY" id="RcR-vE-Qig"/>
                                                         <constraint firstItem="Xe7-lN-mV2" firstAttribute="centerY" secondItem="Poi-24-WFF" secondAttribute="centerY" id="T0D-Fa-ars"/>
-                                                        <constraint firstAttribute="height" constant="254" id="VS1-uB-j0r"/>
+                                                        <constraint firstAttribute="height" constant="265" id="VS1-uB-j0r"/>
                                                         <constraint firstItem="Poi-24-WFF" firstAttribute="top" secondItem="SNs-4f-a99" secondAttribute="top" id="cWI-D7-1rS"/>
                                                         <constraint firstItem="Poi-24-WFF" firstAttribute="top" secondItem="6wp-aF-le2" secondAttribute="bottom" constant="4" id="dcE-VO-bmn"/>
                                                         <constraint firstItem="6wp-aF-le2" firstAttribute="top" secondItem="hSn-8h-n4M" secondAttribute="top" id="eIi-GM-MkH"/>
