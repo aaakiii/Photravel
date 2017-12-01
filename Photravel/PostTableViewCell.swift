@@ -2,6 +2,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import FirebaseDatabase
+import SwiftKeychainWrapper
 
 class PostTableViewCell: UITableViewCell {
 
@@ -13,6 +14,7 @@ class PostTableViewCell: UITableViewCell {
     
     var post: Post!
     var userPostKey:DatabaseReference!
+    let currentUser = KeychainWrapper.standard.string(forKey: "uid")
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,16 +31,16 @@ class PostTableViewCell: UITableViewCell {
         self.likeLabel.text = "\(post.likes)"
         self.username.text = post.username
         if userImg != nil{
-            self.postImg.image = img
+            self.userImg.image = img
         } else {
-            let ref = Storage.storage().reference(forUrl: post.userImg)
-            ref.data(withMaxSize: 2 * 1024, completion: {(data, error) in
+            let ref = Storage.storage().reference(forURL: post.userImg)
+            ref.getData(maxSize: 2 * 1024, completion: {(data, error) in
                 if error != nil{
                     print("couldn't load img")
                 }else {
                     if let imgData = data{
                         if let img = UIImage(data: imgData){
-                                self.postImg.imafe = img
+                                self.userImg.image = img
                         }
                         
                     }
@@ -49,4 +51,19 @@ class PostTableViewCell: UITableViewCell {
         }
     }
 
+    @IBAction func liked(_ sender: AnyObject) {
+        let likeRef = Database.database().reference().child("users").child(currentUser!).child("likes").child(post.postKey)
+        likeRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let _ = snapshot.value as? NSNull {
+                self.post.adjustLikes(addLike: true)
+                likeRef.setValue(true)
+            } else {
+                self.post.adjustLikes(addLike: false)
+                likeRef.removeValue()
+            }
+            
+        })
+        //
+        
+    }
 }

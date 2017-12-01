@@ -7,7 +7,7 @@ import SwiftKeychainWrapper
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var postButton: UIButton!
+    @IBOutlet weak var postButton: UIBarButtonItem!
     
     var posts = [Post]()
     var post: Post!

@@ -8,7 +8,7 @@ class Post {
     private var _postImg: String!
     private var _likes: Int!
     private var _postKey: String!
-    private var postRef: DatabaseReference!
+    private var _postRef: DatabaseReference!
     
     var username: String {
         return _username
@@ -53,7 +53,17 @@ class Post {
         if let likes = postData["likes"] as? Int {
             _likes = likes
         }
-        postRef = Database.database().reference().child("posts")
+        _postRef = Database.database().reference().child("posts").child(_postKey)
+        
+    }
+    
+    func adjustLikes(addLike: Bool) {
+        if addLike {
+            _likes = likes + 1
+        } else {
+            _likes = likes - 1
+        }
+        _postRef.child("likes").setValue(_likes)
         
     }
     
