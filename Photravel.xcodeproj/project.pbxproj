@@ -66,8 +66,9 @@
 		6139940A1FCBE0EF00073410 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6135A7421FD0D3980087CE09 /* PostView.swift */,
 				6139940B1FCBE13800073410 /* CircleImage.swift */,
-				6139940F1FCD1AAD00073410 /* Post.swift */,
+				613994111FCD26F100073410 /* PostTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,20 +94,35 @@
 		6143F43C1FC252FC00D272DC /* Photravel */ = {
 			isa = PBXGroup;
 			children = (
+				615AA1F31FD1093300A37891 /* Model */,
+				615AA1F21FD1090500A37891 /* Controller */,
 				6139940A1FCBE0EF00073410 /* View */,
 				6143F43D1FC252FC00D272DC /* AppDelegate.swift */,
-				6143F43F1FC252FC00D272DC /* ViewController.swift */,
 				6143F4411FC252FC00D272DC /* Main.storyboard */,
 				6143F4441FC252FC00D272DC /* Assets.xcassets */,
 				6143F4461FC252FC00D272DC /* LaunchScreen.storyboard */,
 				6143F4491FC252FC00D272DC /* Info.plist */,
 				6143F44F1FC254B000D272DC /* GoogleService-Info.plist */,
-				61E978381FC7D9E5009478AA /* UserViewController.swift */,
-				6139940D1FCBE39600073410 /* FeedViewController.swift */,
-				613994111FCD26F100073410 /* PostTableViewCell.swift */,
-				6135A7421FD0D3980087CE09 /* PostView.swift */,
 			);
 			path = Photravel;
+			sourceTree = "<group>";
+		};
+		615AA1F21FD1090500A37891 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6139940D1FCBE39600073410 /* FeedViewController.swift */,
+				61E978381FC7D9E5009478AA /* UserViewController.swift */,
+				6143F43F1FC252FC00D272DC /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		615AA1F31FD1093300A37891 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6139940F1FCD1AAD00073410 /* Post.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		86DC0F43BD9240B56E61ED77 /* Frameworks */ = {
