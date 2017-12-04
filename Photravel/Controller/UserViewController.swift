@@ -141,11 +141,7 @@ class UserViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func selectedImagePicker(_ sender: Any){
         present(imagePicker, animated: true, completion: nil)
     }
-    
-    //  cancel button 作ったら
-//    @IBAction func cancel(_ sender: Any){
-//        dismiss(animated: true, completion: nil)
-//    }
+
    
 
 }

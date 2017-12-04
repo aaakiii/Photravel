@@ -25,6 +25,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Photravel"
+        
         
         tableView.delegate = self
         
