@@ -6,76 +6,111 @@ import SwiftKeychainWrapper
 
 class UserViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var userImagePickr: UIImageView!
-    @IBOutlet weak var completeButton: UIButton!
+    @IBOutlet weak var userImagePicker: UIImageView!
+    @IBOutlet weak var completeSignInBtn: UIButton!
     @IBOutlet weak var usernameField: UITextField!
     
     var userUid: String!
+    
     var emailField: String!
-    var passwardField: String!
-    var imagePicker: UIImagePickerController!
+    
+    var passwordField: String!
+    
+    var imagePicker : UIImagePickerController!
+    
     var imageSelected = false
+    
     var username: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         imagePicker = UIImagePickerController()
+        
         imagePicker.delegate = self
+        
         imagePicker.allowsEditing = true
-
     }
     
     func keychain(){
+        
         KeychainWrapper.standard.set(userUid, forKey: "uid")
     }
-
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-            userImagePickr.image = image
-            imageSelected = true
-        }else {
-            print("image isn't selected")
             
+            userImagePicker.image = image
+            
+            imageSelected = true
+            
+        } else {
+            
+            print("image wasnt selected")
         }
+        
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
-    func setupUser(img: String) {
+    func setUpUser(img: String){
+        
         let userData = [
-            "username":  username,
-            "userimage": img
+            "username": username!,
+            "userImg": img
         ]
+        
         keychain()
+        
         let setLocation = Database.database().reference().child("users").child(userUid)
+        
         setLocation.setValue(userData)
     }
     
-    func uploadImage(){
+    func uploadImg() {
+        
         if usernameField.text == nil {
-            print("put user name")
-            completeButton.isEnabled = false
-        }else {
-            completeButton.isEnabled = true
+            
+            print("must have username")
+            
+            completeSignInBtn.isEnabled = false
+            
+        } else {
+            
             username = usernameField.text
+            
+            completeSignInBtn.isEnabled = true
         }
-        guard let img = userImagePickr.image, imageSelected == true else{
-            print("choose image")
+        guard let img = userImagePicker.image, imageSelected == true else {
+            
+            print("image must be selected")
+            
             return
         }
         
-        if let  imageData = UIImageJPEGRepresentation(img, 0.2){
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) {
+            
             let imgUid = NSUUID().uuidString
+            
             let metadata = StorageMetadata()
-            metadata.contentType = "img/jpg"
-            Storage.storage().reference().child(imgUid).putData(imageData, metadata: metadata) {
-                (metadata, error) in
+            
+            metadata.contentType = "img/jpeg"
+            
+            Storage.storage().reference().child(imgUid).putData(imgData, metadata: metadata) { (metadata, error) in
+                
                 if error != nil {
-                    print("didn't upload img")
+                    
+                    print("did not upload img")
+                    
                 } else {
-                    print("img uploaded")
-                    let downloadURL = metadata?.downloadURL()?.absoluteString
-                    if let url = downloadURL {
-                        self.setupUser(img: url)
+                    
+                    print("uploaded")
+                    
+                    let downloadURl = metadata?.downloadURL()?.absoluteString
+                    
+                    if let url = downloadURl {
+                        
+                        self.setUpUser(img: url)
                     }
                 }
             }
@@ -83,16 +118,23 @@ class UserViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func completeAccount(_ sender: Any){
-        Auth.auth().createUser(withEmail: emailField, password: passwardField, completion:{(user,error) in
+        Auth.auth().createUser(withEmail: emailField, password: passwordField, completion: { (user,error) in
+            
             if error != nil {
-                print(error)
+                
+                print("cant create user \(error)")
+                
             } else {
+                
                 if let user = user {
-                    self.userUid =  user.uid
+                    
+                    self.userUid = user.uid
                 }
             }
-            self.uploadImage()
-        } )
+            
+            self.uploadImg()
+        })
+        
         dismiss(animated: true, completion: nil)
     }
     
